@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" src="/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Global timer variable để tránh lỗi ReferenceError từ bên thứ 3 -->
+    <script>
+      // Khai báo biến timer global để tránh lỗi ReferenceError
+      window.timer = null;
+      // Also declare as var for non-strict mode compatibility
+      var timer = null;
+    </script>
+    
+    <!-- Load Facebook SDK asynchronously after page render -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script async>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '1201802201625328',
+          cookie: true,
+          xfbml: true,
+          version: 'v20.0'
+        });
+
+        FB.AppEvents.logPageView();
+      };
+
+      // Load FB SDK after page is loaded
+      window.addEventListener('load', function() {
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0&appId=1201802201625328";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      });
+    </script>
+  </body>
+</html>

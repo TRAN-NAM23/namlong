@@ -1,0 +1,120 @@
+/* Checkout page styles */
+.checkout-wrapper {
+  padding: 40px 0;
+}
+
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+}
+
+@media (max-width: 968px) {
+  .checkout-content { grid-template-columns: 1fr; }
+}
+
+.checkout-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.checkout-form h3 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  color: #333;
+}
+
+.form-row { display: flex; gap: 12px; margin-bottom: 12px; }
+.form-row .form-group { flex: 1; }
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group textarea { min-height: 80px; resize: vertical; }
+
+.checkout-actions {
+  margin-top: 18px;
+}
+
+.btn-primary {
+  background-color: #2f86b7;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.checkout-summary-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 18px;
+  border-radius: 6px;
+}
+
+.summary-item { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid #f2f2f2; }
+.summary-item img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; }
+.summary-item h4 { margin: 0; font-size: 14px; }
+.summary-price { margin-left: auto; font-weight: 700; }
+
+.coupon-row { display:flex; gap:8px; margin: 12px 0 8px; }
+.coupon-row input { flex:1 }
+.coupon-tags { display:flex; gap:8px; flex-wrap:wrap }
+.coupon-tag { border:1px solid #2f86b7; color:#2f86b7; padding:6px 10px; border-radius:6px; font-size:13px }
+
+.summary-totals { padding-top: 12px }
+.totals-row { display:flex; justify-content:space-between; padding:8px 0; color:#555 }
+.totals-row.total { font-size:20px; font-weight:800; color:#222 }
+
+@media (max-width:480px){
+  .summary-item img{ width:60px; height:60px }
+}
+
+/* Payment method styles */
+.payment-method-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.payment-method-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.payment-types {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payment-type-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.payment-type-option:hover {
+  border-color: #2f86b7;
+}
+
+.payment-type-option input[type="radio"] {
+  margin: 0;
+}
+
+.payment-type-option span {
+  font-size: 14px;
+  color: #333;
+}

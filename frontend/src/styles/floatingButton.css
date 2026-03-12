@@ -1,0 +1,79 @@
+
+.floating-container {
+    position: fixed;
+    right: 20px; 
+    bottom: 100px; 
+    z-index: 9999; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.phone-btn {
+    background-color: #D32F2F; 
+    animation: phone-shake 2s infinite; /* Rung lắc liên tục */
+}
+
+.zalo-btn {
+    background-color: #0068FF; 
+    font-size: 25px;
+}
+
+.map-btn {
+    background-color: #FBC02D; /* Vàng nghệ đậm */
+}
+
+/* --- HIỆU ỨNG RUNG LẮC CHO ĐIỆN THOẠI --- */
+@keyframes phone-shake {
+    0% { transform: rotate(0) scale(1); }
+    10% { transform: rotate(-25deg) scale(1.1); }
+    20% { transform: rotate(25deg) scale(1.1); }
+    30% { transform: rotate(-25deg) scale(1.1); }
+    40% { transform: rotate(25deg) scale(1.1); }
+    50% { transform: rotate(0) scale(1); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+/* --- HIỆU ỨNG SÓNG TỎA RA (RINGING) --- */
+.animate-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #D32F2F;
+    animation: ring-wave 1.5s infinite;
+    z-index: -1;
+}
+
+@keyframes ring-wave {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

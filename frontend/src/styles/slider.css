@@ -1,0 +1,118 @@
+/* Slider Container */
+.slider-container {
+    width: 100%;
+    height: 600px; /* Chiều cao slider */
+    position: relative;
+    overflow: hidden; /* Ẩn các phần ảnh tràn ra ngoài */
+    background-color: #000;
+    margin: 10px auto;
+
+}
+
+
+/* Wrapper chứa tất cả ảnh nằm ngang */
+.slider-wrapper {
+        font-family: 'Roboto', sans-serif;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Hiệu ứng trượt mượt */
+}
+
+/* Từng slide đơn lẻ */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.slide-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* --- Mũi tên điều hướng --- */
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+/* --- Dấu chấm (Dots) --- */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: var(--accent-color); /* Màu đỏ ớt */
+    transform: scale(1.2);
+}
+
+
+.slide-content .animate-text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.slide-content .title { animation-delay: 0.3s; }
+.slide-content .desc { animation-delay: 0.5s; }
+.slide-content .btn { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .slider-container { height: 350px; }
+    .slide-content h2 { font-size: 28px; }
+    .slide-content p { font-size: 16px; }
+    .slide-content { padding: 0 20px; max-width: 100%; }
+    .arrow-btn { padding: 10px; font-size: 18px; }
+}

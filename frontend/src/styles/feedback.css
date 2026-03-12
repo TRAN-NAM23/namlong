@@ -1,0 +1,151 @@
+/* Container chính */
+.feedback-section {
+    padding: 50px 10px;
+    background-color: #FFFDE7; 
+    border-top: 1px solid #eee;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Header căn giữa (ghi đè class cũ nếu cần) */
+.section-header-wrapper.center {
+    justify-content: center;
+    border-bottom: none; /* Bỏ gạch chân dài */
+}
+.section-header-wrapper.center .section-title {
+    /* Tạo hình ruy băng cân đối */
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    padding: 10px 50px;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* --- FEEDBACK CARD --- */
+.feedback-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    /* Hiệu ứng đổ bóng nhẹ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Icon Quote nền mờ */
+.quote-icon-bg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 60px;
+    color: rgba(183, 110, 40, 0.1);
+}
+
+/* Phần trên: Avatar + Info */
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+/* Avatar người dùng */
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+/* Thông tin người dùng */
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+/* Tên người dùng */
+.user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+/* Chức vụ người dùng */
+.user-role {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Sao đánh giá */
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.star.active {
+    color: #FFC107; 
+}
+
+/* Phần nội dung comment */
+.card-body {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+/* Phần nội dung comment */
+.user-comment {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Phần footer */
+.card-footer {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .feedback-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-grid {
+        grid-template-columns: 1fr; /* Mobile hiển thị 1 cột */
+    }
+    .quote-icon-bg {
+        font-size: 40px;
+    }
+}

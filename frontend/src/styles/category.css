@@ -1,0 +1,218 @@
+/* --- LAYOUT CHUNG --- */
+.category-layout-wrapper {
+    display: flex;
+    gap: 30px; 
+    padding-bottom: 50px;
+    align-items: flex-start; 
+    margin-top: 30px;
+}
+
+/* --- 1. SIDEBAR (Bên trái) --- */
+.sidebar {
+/* Chiều rộng cố định giống ảnh mẫu */
+    flex-shrink: 0;
+}
+
+.sidebar-widget {
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+/* Header Xám Đậm đặc trưng */
+.widget-header-dark {
+    background-color: #555555; /* Màu xám đậm chuẩn */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.widget-content {
+    padding: 15px 10px;
+}
+
+.filter-group-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ccc; /* Gạch dọc nhỏ bên cạnh tiêu đề con */
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Danh sách Checkbox */
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+}
+
+/* Custom Checkbox Style */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    user-select: none;
+}
+
+.custom-checkbox:hover {
+    color: var(--primary-color);
+}
+
+.custom-checkbox input {
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Link danh mục trong sidebar */
+.filter-list li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: 0.2s;
+    display: block;
+}
+
+.filter-list li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px; 
+}
+
+/* --- 2. MAIN CONTENT (Bên phải) --- */
+.main-content {
+    flex: 1; 
+}
+.shop-toolbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Khu vực bên phải: Chứa Text và Select */
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* Style cho dòng chữ */
+.product-count {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap; 
+}
+
+.product-count b {
+    color: var(--primary-color);
+}
+.sort-box select {
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 4px;
+    outline: none;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* GRID SẢN PHẨM  */
+.shop-product-grid {
+    display: grid;
+    /* use 5 columns to make cards smaller, like home page */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;
+}
+
+/* --- PHÂN TRANG --- */
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.page-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #555;
+    transition: 0.2s;
+}
+
+.page-btn:hover, .page-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablet (< 992px): Chuyển Sidebar lên trên hoặc ẩn đi, Grid 3 cột */
+@media (max-width: 992px) {
+    .category-layout-wrapper {
+        flex-direction: column; /* Chuyển thành 1 cột dọc */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar full màn hình */
+        margin-bottom: 20px;
+    }
+    
+    .shop-product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Mobile (< 600px): Grid 2 cột */
+@media (max-width: 600px) {
+    .shop-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .page-title-small {
+        font-size: 16px;
+    }
+}
+
+/* Responsive cho mobile: Ẩn dòng đếm số lượng đi cho đỡ chật (nếu muốn) */
+@media (max-width: 768px) {
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .toolbar-right {
+        width: 100%;
+        justify-content: space-between; /* Mobile thì đẩy 2 cái ra 2 đầu */
+    }
+}

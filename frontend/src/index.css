@@ -1,0 +1,26 @@
+/* index.css */
+:root {
+
+  --primary-color: #b76d28e4; 
+
+  --secondary-color: #466f48; 
+
+  --accent-color: #D32F2F;
+  --text-main: #4E342E; 
+  --bg-color: #FFFDE7; 
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+}
+
+.container {
+  margin: 0 auto;
+}

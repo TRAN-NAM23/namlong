@@ -1,0 +1,146 @@
+
+:root {
+    --primary-color: #B76E28; 
+    --accent-color: #D32F2F;  
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee; 
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 100%; 
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+/* --- IMAGE AREA --- */
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Tạo khung vuông 1:1 */
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    padding: 2px;
+    border-radius: 6px 6px 0 0;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.08); /* Zoom nhẹ ảnh */
+}
+
+/* Badges */
+.badge-discount {
+    position: absolute; top: 10px; left: 10px;
+    background: #28a745; color: #fff;
+    font-size: 12px; font-weight: bold;
+    padding: 3px 8px; border-radius: 3px; z-index: 2;
+}
+
+.badge-hot {
+    position: absolute; top: 10px; right: 10px;
+    background: #d56464; color: #fafafa;
+    font-size: 11px; font-weight: 800;
+    padding: 3px 8px; border-radius: 3px; z-index: 2;
+}
+
+.badge-out-of-stock {
+    position: absolute; top: 40px; right: 10px;
+    background: #dc3545; color: #fff;
+    font-size: 10px; font-weight: 800;
+    padding: 3px 6px; border-radius: 3px; z-index: 2;
+}
+
+/* --- HOVER ACTIONS --- */
+.hover-actions {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.product-card:hover .hover-actions {
+    opacity: 1; visibility: visible;
+}
+
+.action-circle-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff; border: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; cursor: pointer;
+    transition: all 0.2s; transform: translateY(15px);
+}
+
+.product-card:hover .action-circle-btn {
+    transform: translateY(0);
+}
+
+.action-circle-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.1) !important;
+}
+
+/* --- INFO AREA --- */
+.product-info {
+    padding: 12px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.product-name {
+    font-size: 14px; color: #333; margin: 0 0 8px;
+    font-weight: 600; line-height: 1.4;
+    min-height: 40px; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.product-name a { text-decoration: none; color: inherit; transition: 0.2s; }
+.product-name a:hover { color: var(--primary-color); }
+
+.price-box { margin-top: auto; }
+
+.current-price {
+    color: var(--accent-color);
+    font-weight: 700; font-size: 16px;
+}
+
+.old-price {
+    color: #999; text-decoration: line-through;
+    font-size: 13px; margin-left: 8px;
+}
+
+/* Disabled button styles */
+.action-circle-btn.disabled {
+    background: #ccc !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.action-circle-btn.disabled:hover {
+    background: #ccc !important;
+    transform: none !important;
+}
+

@@ -1,0 +1,176 @@
+
+.footer-wrapper {
+    background-color:  #b76d28e4; 
+    color: #e0e0e0; 
+    padding-top: 20px;
+    font-size: 14px;
+   
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+/* --- Tiêu đề cột --- */
+.footer-title {
+    color: #ffcd29; 
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Gạch chân dưới tiêu đề cho đẹp */
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #c95e4b; /* Màu đỏ ớt */
+}
+
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+     color:#fff;
+}
+
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+     color:#fff;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+     color:#fff;
+
+}
+
+.contact-list .icon {
+    color: #ffcd29;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+/* --- Danh sách liên kết (Menu footer) --- */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #444; 
+    padding-bottom: 8px;
+}
+
+.footer-links li:last-child {
+    border-bottom: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    color:#fff;
+}
+
+
+.footer-links a:hover {
+    color: #FFD54F;
+    transform: translateX(5px);
+}
+
+/* --- Hộp đăng ký nhận tin (Newsletter) --- */
+.newsletter-box {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.newsletter-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #eba25fe4;
+    color: white;
+    outline: none;
+}
+
+.newsletter-box button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-box button:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Mạng xã hội --- */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-item {
+    width: 36px;
+    height: 36px;
+    background-color: #444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* Màu riêng cho từng mạng xã hội khi hover */
+.social-item.fb:hover { background-color: #1877F2; }
+.social-item.yt:hover { background-color: #FF0000; }
+.social-item.tt:hover { background-color: #000000; border: 1px solid #333; }
+
+/* --- Footer Bottom (Copyright) --- */
+.footer-bottom {
+    background-color: #96622a; /* Màu đen nâu rất đậm */
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #7f635f;
+    color: #dfdddd;
+    font-size: 13px;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 40px;
+    }
+    
+    .footer-title::after {
+        width: 60px; /* Gạch chân dài hơn xíu trên mobile cho cân đối */
+    }
+}

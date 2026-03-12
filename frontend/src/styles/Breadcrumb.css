@@ -1,0 +1,37 @@
+.breadcrumb-section {
+    background-color: #f9f9f9;
+    padding: 15px 0;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.breadcrumb-section .container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.breadcrumb-link:hover {
+    color: var(--primary-color);
+}
+
+.separator {
+    font-size: 10px;
+    color: #ccc;
+}
+
+.current {
+    font-weight: 700;
+    color: var(--primary-color); /* Màu nâu chủ đạo */
+}
