@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
+const instance = axios.create({
+  baseURL: 'https://namlong-hdi8.onrender.com', // Thay bằng link Render này
 });
 
-export default api;
+export default instance;
