@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
-const instance = axios.create({
-  baseURL: 'https://namlong-hdi8.onrender.com', // Link backend của bạn
+const api = axios.create({
+  baseURL: "https://namlong-hdi8.onrender.com",
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json"
   }
 });
 
-export default instance;
+export default api;
