@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../config/api";
 import "./AccountMenu.css";
 
 const AccountMenu = ({ user, onLogout, onOpenPopUp }) => {
